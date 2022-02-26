@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Homepage from "./cmpts/Home/Homepage";
+import CreateRoom from "./cmpts/Create/CreateRoom";
+import JoinRoom from "./cmpts/Join/JoinRoom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+    <BrowserRouter>
+      <Routes>
+        <>fff</>
+        {/* <Route exact path="/" element={navigate('/room')}/> */}
+        <Route exact path="/room" element={<Homepage/>}/>
+        <Route exact path="/create" element={<CreateRoom/>}/>
+        <Route exact path="/join" element={<JoinRoom/>}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
